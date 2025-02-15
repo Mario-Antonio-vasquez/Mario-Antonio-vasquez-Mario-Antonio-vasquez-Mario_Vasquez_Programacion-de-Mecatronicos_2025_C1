@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    int x1, x2, res;
+    int op;
+    int num, pot;
+
+    // Menú de la calculadora
+    system("cls"); // Limpiar pantalla (solo en Windows)
+    printf("----------CALCULADORA BASICA----------\n");
+    printf("1.- SUMA\n");
+    printf("2.- RESTA\n");
+    printf("3.- MULTIPLICACION\n");
+    printf("4.- DIVISION\n");
+    printf("5.- POTENCIA\n");
+    printf("6.- RAIZ CUADRADA\n");
+    printf("7.- SALIR\n");
+    printf("SELECCIONE UNA OPCION: ");
+    scanf("%d", &op);
+
+    switch (op) {
+        case 1: // Suma
+            printf("Ingresa el 1er numero: ");
+            scanf("%d", &x1);
+            printf("Ingresa el 2do numero: ");
+            scanf("%d", &x2);
+            res = x1 + x2;
+            printf("\nResultado: %d\n", res);
+            system("pause"); // Pausa (solo en Windows)
+            break;
+
+        case 2: // Resta
+            printf("Ingresa el 1er numero: ");
+            scanf("%d", &x1);
+            printf("Ingresa el 2do numero: ");
+            scanf("%d", &x2);
+            res = x1 - x2;
+            printf("\nResultado: %d\n", res);
+            system("pause");
+            break;
+
+        case 3: // Multiplicación
+            printf("Ingresa el 1er numero: ");
+            scanf("%d", &x1);
+            printf("Ingresa el 2do numero: ");
+            scanf("%d", &x2);
+            res = x1 * x2;
+            printf("\nResultado: %d\n", res);
+            system("pause");
+            break;
+
+        case 4: // División
+            printf("Ingresa el 1er numero: ");
+            scanf("%d", &x1);
+            printf("Ingresa el 2do numero: ");
+            scanf("%d", &x2);
+            if (x2 == 0) {
+                printf("\nError: No se puede dividir por cero.\n");
+            } else {
+                res = x1 / x2;
+                printf("\nResultado: %d\n", res);
+            }
+            system("pause");
+            break;
+
+        case 5: // Potencia
+            printf("Digite el numero que quiere elevar: ");
+            scanf("%d", &num);
+            printf("Digite la potencia: ");
+            scanf("%d", &pot);
+            res = pow(num, pot);
+            printf("La potencia es: %d\n", res);
+            system("pause");
+            break;
+
+        case 6: // Raíz cuadrada
+            printf("Digite el numero para calcular la raiz cuadrada: ");
+            scanf("%d", &num);
+            if (num < 0) {
+                printf("Error: No se puede calcular la raiz de un numero negativo.\n");
+            } else {
+                printf("La raiz cuadrada es: %.2f\n", sqrt(num));
+            }
+            system("pause");
+            break;
+
+        case 7: // Salir
+            printf("Seguro que quiere salir?\n");
+            printf("1.- SI\n");
+            printf("2.- NO\n");
+            system("pause");
+            break;
+
+        default: // Opción no válida
+            if (op < 1 || op > 7) {
+                printf("\nError: Opcion no valida :(\n");
+            }
+            break;
+    }
+
+    return 0;
+}
